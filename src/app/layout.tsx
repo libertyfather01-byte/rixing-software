@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Providers from "@/components/Providers";
 
 export default function RootLayout({
   children,
@@ -31,13 +30,11 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Providers>
-            <Navbar />
-            <main className="main-content">
-              {children}
-            </main>
-            <Footer />
-          </Providers>
+          <Navbar />
+          <main className="main-content">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
