@@ -1,15 +1,9 @@
 import Link from 'next/link';
 import { MapPin, Clock } from 'lucide-react';
-import prisma from '@/lib/prisma';
 import styles from './page.module.css';
 
-export const dynamic = 'force-dynamic';
-
 export default async function Careers() {
-  const jobs = await prisma.career.findMany({
-    where: { isActive: true },
-    orderBy: { createdAt: 'desc' }
-  });
+  const jobs: any[] = [];
 
   return (
     <div className={styles.page}>

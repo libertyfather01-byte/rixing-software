@@ -1,16 +1,33 @@
 import Link from "next/link";
 import { ArrowRight, Code, Code2, MonitorSmartphone, Database, Cloud, Shield, CheckCircle2, ChevronRight, Play, ShieldCheck, BarChart3, Users, Activity, Bot, Smartphone, Layout } from 'lucide-react';
 import styles from "./page.module.css";
-import prisma from "@/lib/prisma";
 import { servicesData } from "@/data/servicesData";
 
-export const dynamic = 'force-dynamic';
+const projects = [
+  {
+    id: '1',
+    title: 'Enterprise ERP System',
+    slug: 'enterprise-erp',
+    clientName: 'Global Manufacturing Inc.',
+    technologies: 'Next.js, Node.js, PostgreSQL',
+  },
+  {
+    id: '2',
+    title: 'Fintech Mobile App',
+    slug: 'fintech-app',
+    clientName: 'SecureBank Ltd.',
+    technologies: 'React Native, Go, AWS',
+  },
+  {
+    id: '3',
+    title: 'AI Analytics Dashboard',
+    slug: 'ai-dashboard',
+    clientName: 'DataCorp Solutions',
+    technologies: 'Python, React, TensorFlow',
+  }
+];
 
 export default async function Home() {
-  const projects = await prisma.portfolioItem.findMany({
-    take: 3,
-    orderBy: { createdAt: 'desc' }
-  });
 
   return (
     <div className={styles.page}>
