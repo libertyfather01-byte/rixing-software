@@ -57,7 +57,7 @@
   }
 }
 
-:global(.dark) .section {
+.dark .section {
   background: transparent;
   border: none;
   border-radius: 0;
