@@ -1,0 +1,173 @@
+.header {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Let clicks pass through the container */
+}
+
+.nav {
+  pointer-events: auto; /* Re-enable clicks for the nav itself */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1200px;
+  min-height: 6rem;
+  height: auto;
+  padding: 0.5rem 1.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border-strong);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-md), var(--glass-border-inset);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scrolled .nav {
+  box-shadow: var(--shadow-3d), var(--glass-border-inset);
+  background: rgba(var(--background-rgb), 0.85); /* Slightly more opaque when scrolled */
+}
+
+.logo {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 60;
+}
+
+.logoIcon {
+  color: var(--primary);
+  filter: drop-shadow(0 2px 4px rgba(37,99,235,0.4));
+}
+
+.desktopMenu {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopMenu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--foreground);
+  transform: translateY(-1px);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.navLink:hover::after {
+  width: 100%;
+  box-shadow: 0 0 8px var(--primary);
+}
+
+.authGroup {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .authGroup {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.loginBtn {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--muted-foreground);
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.loginBtn:hover {
+  color: var(--foreground);
+  background: rgba(255,255,255,0.05);
+}
+
+
+.mobileToggle {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  z-index: 60;
+  padding: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .mobileToggle {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileLink {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.mobileAuth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
