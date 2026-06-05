@@ -64,6 +64,9 @@ export default function Navbar() {
         <Link href="/about" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
         
         <div className={styles.mobileAuth}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+            <ThemeToggle />
+          </div>
           <Link href="/contact" className="btn-primary" onClick={() => setIsMobileMenuOpen(false)}>
             Contact Sales
           </Link>
