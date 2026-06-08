@@ -74,7 +74,7 @@ export const servicesData: ServiceData[] = [
         description: 'A low-code SaaS tool that dynamically generates fully responsive, SEO-optimized business websites in seconds.',
         status: 'Development',
         imageUrl: '/window.svg',
-        url: 'https://generator.example.com'
+        url: 'https://liberty-site-builder.vercel.app/app.html'
       },
       {
         name: 'Political Supporter Management System',

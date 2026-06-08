@@ -40,6 +40,14 @@ export default function Footer() {
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
+
+        <div className={styles.linkGroup}>
+          <h3 className={styles.heading}>Our Ecosystem</h3>
+          <ul className={styles.linkList}>
+            <li><Link href="/">Rixings Software</Link></li>
+            <li><a href="https://rixing-ai-academy.vercel.app/" target="_blank" rel="noopener noreferrer">Rixings Academy</a></li>
+          </ul>
+        </div>
       </div>
 
       <div className={styles.bottomBar}>

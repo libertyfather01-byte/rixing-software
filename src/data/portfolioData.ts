@@ -47,7 +47,8 @@ export const portfolioData: PortfolioItem[] = [
     description: 'An AI-powered website builder that allows users to generate fully functional, responsive websites from text prompts in seconds.',
     imageUrl: '/window.svg', 
     technologies: ['Next.js', 'React', 'OpenAI', 'Tailwind CSS'],
-    status: 'Beta'
+    status: 'Beta',
+    url: 'https://liberty-site-builder.vercel.app/app.html'
   },
   {
     id: 'political-supporter-management',

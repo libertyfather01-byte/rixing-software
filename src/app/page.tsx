@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Code, Code2, MonitorSmartphone, Database, Cloud, Shield, CheckCircle2, ChevronRight, Play, ShieldCheck, BarChart3, Users, Activity, Bot, Smartphone, Layout } from 'lucide-react';
 import styles from "./page.module.css";
 import { servicesData } from "@/data/servicesData";
+import { portfolioData } from "@/data/portfolioData";
 
 const projects = [
   {
@@ -259,6 +260,76 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Beyond Building Software Section */}
+      <section className="section">
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              Beyond Building Software.<br />
+              <span className="text-gradient" style={{ display: 'inline-block', marginTop: '0.5rem' }}>Building Technology. Empowering People.</span>
+            </h2>
+            <p className={styles.sectionDesc}>
+              At Rixings, we don't just create digital solutions.<br />
+              We also help individuals and businesses develop practical AI and technology skills through Rixings Academy.
+            </p>
+          </div>
+
+          <div className={styles.premiumEcosystemGrid}>
+            <div className={styles.premiumCard}>
+              <div className={styles.cardBg}>
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" alt="Modern software development workspace" loading="lazy" />
+                <div className={styles.cardOverlay}></div>
+              </div>
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>
+                  <span className={styles.iconAccent}>💻</span> Rixings Software
+                </h3>
+                <p className={styles.cardDesc}>
+                  Building AI-powered websites, applications, and digital solutions that help businesses innovate and grow.
+                </p>
+                <Link href="/services" className={styles.cardLink}>
+                  Explore Services <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+            
+            <a href="https://rixing-ai-academy.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.premiumCard}>
+              <div className={styles.cardBg}>
+                <img src="/academy-bg.png" alt="Modern African AI classroom" loading="lazy" />
+                <div className={styles.cardOverlay}></div>
+              </div>
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>
+                  <span className={styles.iconAccent}>🎓</span> Rixings Academy
+                </h3>
+                <p className={styles.cardDesc}>
+                  Practical AI, web development, and technology education designed around real-world projects.
+                </p>
+                <span className={styles.cardLink}>
+                  Visit Academy <ArrowRight size={18} />
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div className={styles.ecosystemCtaArea}>
+            <div className={styles.ctaGlow}></div>
+            <h3 className={styles.ecosystemCtaTitle}>Ready to Build or Learn?</h3>
+            <p className={styles.ecosystemCtaDesc}>
+              Whether you need innovative digital solutions or want to master modern AI and technology skills, Rixings has a path for you.
+            </p>
+            <div className={styles.ecosystemCtaButtons}>
+              <Link href="/services" className="btn-primary">
+                Explore Rixings Software
+              </Link>
+              <a href="https://rixing-ai-academy.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Visit Rixings Academy
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Modern Portfolio Display */}
       <section className="section">
         <div className="container">
@@ -270,21 +341,38 @@ export default async function Home() {
           </div>
 
           <div className={styles.portfolioGrid}>
-            {projects.map((project) => (
-              <Link href={`/portfolio/${project.slug}`} key={project.id} className={`glass-card-interactive ${styles.portfolioCard}`}>
-                <div className={styles.portfolioImage}>
-                  {project.title.charAt(0)}
-                </div>
-                <div className={styles.portfolioContent}>
-                  <span className={styles.portfolioClient}>{project.clientName}</span>
-                  <h3>{project.title}</h3>
-                  <div className={styles.techTags}>
-                    {project.technologies.split(',').slice(0, 3).map((tech, i) => (
-                      <span key={i} className={styles.techTag}>{tech.trim()}</span>
-                    ))}
+            {portfolioData.slice(0, 3).map((project) => (
+              project.url ? (
+                <a href={project.url} target="_blank" rel="noopener noreferrer" key={project.id} className={`glass-card-interactive ${styles.portfolioCard}`}>
+                  <div className={styles.portfolioImage}>
+                    {project.title.charAt(0)}
+                  </div>
+                  <div className={styles.portfolioContent}>
+                    <span className={styles.portfolioClient}>{project.category}</span>
+                    <h3>{project.title}</h3>
+                    <div className={styles.techTags}>
+                      {project.technologies.slice(0, 3).map((tech, i) => (
+                        <span key={i} className={styles.techTag}>{tech.trim()}</span>
+                      ))}
+                    </div>
+                  </div>
+                </a>
+              ) : (
+                <div key={project.id} className={`glass-card-interactive ${styles.portfolioCard}`}>
+                  <div className={styles.portfolioImage}>
+                    {project.title.charAt(0)}
+                  </div>
+                  <div className={styles.portfolioContent}>
+                    <span className={styles.portfolioClient}>{project.category}</span>
+                    <h3>{project.title}</h3>
+                    <div className={styles.techTags}>
+                      {project.technologies.slice(0, 3).map((tech, i) => (
+                        <span key={i} className={styles.techTag}>{tech.trim()}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </Link>
+              )
             ))}
           </div>
         </div>

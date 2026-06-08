@@ -37,6 +37,7 @@ export default function Navbar() {
           <Link href="/technologies" className={styles.navLink}>Technologies</Link>
           <Link href="/portfolio" className={styles.navLink}>Portfolio</Link>
           <Link href="/about" className={styles.navLink}>About Us</Link>
+          <a href="https://rixing-ai-academy.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Academy</a>
         </div>
 
         {/* Authentication & Portal */}
@@ -62,6 +63,7 @@ export default function Navbar() {
         <Link href="/technologies" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>Technologies</Link>
         <Link href="/portfolio" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link>
         <Link href="/about" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+        <a href="https://rixing-ai-academy.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>Academy</a>
         
         <div className={styles.mobileAuth}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
