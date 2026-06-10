@@ -28,10 +28,12 @@ export default function About() {
               For over 15 years, we have partnered with Fortune 500 companies and fast-growing startups to engineer robust platforms that drive operational efficiency, enhance user experiences, and accelerate digital transformation.
             </p>
           </div>
-          <div className={styles.imagePlaceholder}>
-            <div className={styles.imageOverlay}>
-              <Users size={64} color="var(--primary)" />
-            </div>
+          <div className={styles.imagePlaceholder} style={{ position: 'relative', overflow: 'hidden' }}>
+            <img 
+              src="/about-us-hologram.png" 
+              alt="African software engineers collaborating on holographic dashboard" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            />
           </div>
         </div>
       </section>
