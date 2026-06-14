@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Code, Code2, MonitorSmartphone, Database, Cloud, Shield, CheckCircle2, ChevronRight, Play, ShieldCheck, BarChart3, Users, Activity, Bot, Smartphone, Layout } from 'lucide-react';
 import styles from "./page.module.css";
 import { servicesData } from "@/data/servicesData";
@@ -345,7 +346,12 @@ export default async function Home() {
               project.url ? (
                 <a href={project.url} target="_blank" rel="noopener noreferrer" key={project.id} className={`glass-card-interactive ${styles.portfolioCard}`}>
                   <div className={styles.portfolioImage}>
-                    {project.title.charAt(0)}
+                    <Image 
+                      src={project.imageUrl} 
+                      alt={project.title} 
+                      fill 
+                      className={styles.portfolioImg}
+                    />
                   </div>
                   <div className={styles.portfolioContent}>
                     <span className={styles.portfolioClient}>{project.category}</span>
@@ -360,7 +366,12 @@ export default async function Home() {
               ) : (
                 <div key={project.id} className={`glass-card-interactive ${styles.portfolioCard}`}>
                   <div className={styles.portfolioImage}>
-                    {project.title.charAt(0)}
+                    <Image 
+                      src={project.imageUrl} 
+                      alt={project.title} 
+                      fill 
+                      className={styles.portfolioImg}
+                    />
                   </div>
                   <div className={styles.portfolioContent}>
                     <span className={styles.portfolioClient}>{project.category}</span>

@@ -15,7 +15,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Popnchat',
     category: 'Mobile Application',
     description: 'A modern, real-time messaging application focused on secure and seamless connectivity. Built for performance and user engagement.',
-    imageUrl: '/popnchat-logo.png',
+    imageUrl: '/popnchat-logo-v2.png',
     technologies: ['React Native', 'Node.js', 'WebSockets', 'Firebase'],
     status: 'Live',
     url: 'https://play.google.com/store/apps/details?id=com.Yamposki.popnchat&pcampaignid=web_share'
@@ -25,7 +25,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Allrounder',
     category: 'Mobile Application',
     description: 'A versatile mobile utility application designed to handle everyday tasks with maximum efficiency.',
-    imageUrl: '/allrounder-logo.png',
+    imageUrl: '/allrounder-logo-v2.jpg',
     technologies: ['Flutter', 'Firebase', 'Node.js'],
     status: 'Live',
     url: 'https://play.google.com/store/apps/details?id=com.allroundar.www&pcampaignid=web_share'
@@ -35,7 +35,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Schoolhive',
     category: 'Mobile Application',
     description: 'A comprehensive educational management platform enabling seamless communication between students, teachers, and parents.',
-    imageUrl: '/schoolhive-logo.png',
+    imageUrl: '/schoolhive-logo.jpg',
     technologies: ['React Native', 'Express', 'MongoDB'],
     status: 'Live',
     url: 'https://play.google.com/store/apps/details?id=com.schoolhives.app'
@@ -45,7 +45,7 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Website Generator Platform',
     category: 'SaaS Platform',
     description: 'An AI-powered website builder that allows users to generate fully functional, responsive websites from text prompts in seconds.',
-    imageUrl: '/window.svg', 
+    imageUrl: '/libertyself-logo.jpg',  
     technologies: ['Next.js', 'React', 'OpenAI', 'Tailwind CSS'],
     status: 'Beta',
     url: 'https://liberty-site-builder.vercel.app/app.html'
